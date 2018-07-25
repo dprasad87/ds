@@ -3,7 +3,7 @@ package com.learn.ds.ch1;
 public class Ex1_ArrayProrams {
 
     public static void main(String[] args) {
-        int[] arr = {1,4,634,-34,6,7,765};
+        int[] arr = {1,4,634,-34,6,7,76,54,46,44,47,49,87,9,-9,-86,5,53,43};
         int[][] twoDArray = {{2,34,5,9,8},{2,34,5,9,8}};
         System.out.println("Average = " + calculateAverage(arr));
         print2DArray(twoDArray);
@@ -11,15 +11,29 @@ public class Ex1_ArrayProrams {
         System.out.println("Largest = " + largest(arr));
         System.out.println("Smallest = " + smallest(arr));
         System.out.println("2nd largest = " + secondLargest(arr));
+        printMaximas(arr);
+    }
+
+    private static void printMaximas(int[] arr) {
+        int maxAt = 0;
+        for (int i = arr.length; i >= 0 ; i--) {
+
+        }
     }
 
     private static int secondLargest(int[] arr) {
         int largest = 0;
         int secLargest = 0;
         for (int i = 0; i < arr.length ; i++) {
-            if(arr[i] > largest) {
-                secLargest = largest;
-                largest = arr[i];
+            if(arr[i] > secLargest) {
+                if(arr[i] > largest) {
+                    secLargest = largest;
+                    largest = arr[i];
+                }
+                else {
+                    //secLargest < arr[i] < largest
+                    secLargest = arr[i];
+                }
             }
         }
         return secLargest;
