@@ -15,10 +15,13 @@ public class Ex1_ArrayProrams {
     }
 
     private static void printMaximas(int[] arr) {
-        int maxAt = 0;
-        for (int i = arr.length; i >= 0 ; i--) {
-
+        System.out.print("local maximas : ");
+        for (int i = 0; i < arr.length ; i++) {
+            if((i == 0 || arr[i-1] < arr[i]) && (i == arr.length -1 || arr[i+1] < arr[i])) {
+                System.out.print(" " + arr[i]);
+            }
         }
+        System.out.println();
     }
 
     private static int secondLargest(int[] arr) {
